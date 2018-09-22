@@ -57,7 +57,12 @@ int main() {
 			}
 
 		} else {
+			//判断m的奇偶性分类
+			if(m%2!=0)
 			for(int i=0; i<m; i++)
+				sum*=a[i];
+			else
+		        for(int i=n-1;i>n-m;i--)
 				sum*=a[i];
 		}
 		cout<<sum<<endl;
