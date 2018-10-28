@@ -14,13 +14,12 @@ int main()
 		for(int i=1;i<=n;i++)
 		cin>>a[i];
 		memset(f,0,sizeof(f));
+		f[1]=a[1];
 		for(int i=1;i<=n;i++)
 		{
-			f[1]=a[1];
-		    f[i]=max(a[i]+f[i-2],an[i]+f[i-3]);
-		    ans=max(ans,f[i]);
+		    f[i]=max(a[i]+f[i-2],f[i-1]);
 		}
-		cout<<ans<<endl;
+		cout<<f[n]<<endl;
 	}
 	return 0;
  } 
