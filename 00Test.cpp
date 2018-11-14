@@ -13,7 +13,7 @@ typedef struct Node
 }node;
 int ans;
 node start,now,next;
-queue<node>q;//结
+queue<node>q;//结构
 void check()
 {
     if(mmap[next.x][next.y] == '.')
