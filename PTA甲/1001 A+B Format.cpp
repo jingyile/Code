@@ -1,36 +1,14 @@
-#include<iostream>
-#include<string.h>
-#include<stdlib.h>
+#include <iostream>
 using namespace std;
-int main()
-{
-	int a,b;
-	scanf("%d %d",&a,&b);
-	int c=a+b;
-	char s[200];
-	//itoa(c,s,10);
-	string s = to_string(a + b);
-	int len=strlen(s);
-	int cnt=0;
-	for(int i=0;i<len;i++)
-	{
-		if(s[i]=='-')
-		{
-			printf("%c",s[i]);
-			continue;
-		}
-
-		if(cnt==3)
-		{
-			cnt=0;
-			printf(",%c",s[i]);
-		}
-		else
-		{
-			printf("%c",s[i]);
-			cnt++;
-		}
-	}
-	return 0;
+int main() {
+    int a, b;
+    cin >> a >> b;
+    string s = to_string(a + b);
+    int len = s.length();
+    for (int i = 0; i < len; i++) {
+        cout << s[i];
+        if (s[i] == '-') continue;
+        if ((i + 1) % 3 == len % 3 && i != len - 1) cout << ",";
+    }
+    return 0;
 }
-
